@@ -5,7 +5,7 @@ jobs:
     - arch: arm64-graviton2
       dist: jammy
       virt: vm
-      group: edge
+      group: stable
 
 script:
   - echo "Running tests..."
