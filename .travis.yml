@@ -1,0 +1,22 @@
+language: elixir
+
+jobs:
+  include:
+    - arch: arm64-graviton2
+      dist: jammy
+      virt: vm
+      group: edge
+
+otp_release:
+  - 26.1.1
+
+elixir:
+  - 1.15.7
+
+install:
+  - kiex use 1.15.7
+  - mix local.hex --force
+  - mix local.rebar --force
+
+script:
+  - mix test
